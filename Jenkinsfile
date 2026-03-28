@@ -55,6 +55,13 @@ pipeline {
         bat 'kubectl apply -f service.yaml --validate=false'
         bat 'kubectl rollout restart deployment demo-app-deployment'
     }
+
 }
+stage('Test K8s') {
+    steps {
+        bat 'kubectl get nodes'
+    }
+}
+
     }
 }
